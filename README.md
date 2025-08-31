@@ -1,2 +1,2 @@
 # universal-optimizer-app
-Universal optimizr Aplication
+Universal optimizer aplication
