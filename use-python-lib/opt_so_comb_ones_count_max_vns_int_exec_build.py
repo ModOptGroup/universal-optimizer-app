@@ -3,6 +3,12 @@ from random import randint
 from random import choice
 from typing import Optional
 
+import sys
+from pathlib import Path
+current_dir = Path(__file__).parent
+lib_alias = current_dir / "lib"
+sys.path.append(str(lib_alias))
+
 from uo.problem.problem import Problem
 from uo.solution.quality_of_solution import QualityOfSolution
 from uo.solution.solution import Solution

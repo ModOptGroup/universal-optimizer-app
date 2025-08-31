@@ -14,13 +14,16 @@ sys.path.append(directory)
 sys.path.append(directory.parent)
 sys.path.append(directory.parent.parent.parent)
 sys.path.append(directory.parent.parent.parent.parent)
-sys.path.append(directory.parent.parent.parent.parent.parent)
+root_dir = directory.parent.parent.parent.parent.parent
+sys.path.append(str(root_dir))
+sys.path.append(str(root_dir/ "lib"))
 
 from copy import deepcopy
 from random import choice
 from random import random
 
 from bitstring import Bits, BitArray, BitStream, pack
+
 
 from uo.utils.logger import logger
 from uo.utils.complex_counter_uniform_ascending import ComplexCounterUniformAscending

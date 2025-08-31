@@ -2,6 +2,12 @@ from copy import deepcopy
 from random import randint
 from random import choice
 
+import sys
+from pathlib import Path
+current_dir = Path(__file__).parent
+lib_alias = current_dir / "lib"
+sys.path.append(str(lib_alias))
+
 from uo.algorithm.output_control import OutputControl
 from uo.algorithm.metaheuristic.finish_control import FinishControl
 from uo.algorithm.metaheuristic.additional_statistics_control import AdditionalStatisticsControl

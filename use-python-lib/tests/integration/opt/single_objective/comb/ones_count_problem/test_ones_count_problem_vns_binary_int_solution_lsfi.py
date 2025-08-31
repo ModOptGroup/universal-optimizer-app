@@ -1,4 +1,9 @@
-
+import sys
+from pathlib import Path
+directory = Path(__file__).resolve()
+root_dir = directory.parent.parent.parent.parent.parent.parent.parent
+sys.path.append(str(root_dir))
+sys.path.append(str(root_dir/ "lib"))
 
 import unittest   
 import unittest.mock as mocker

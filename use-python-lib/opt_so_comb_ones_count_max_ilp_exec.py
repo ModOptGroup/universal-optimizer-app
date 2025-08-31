@@ -2,6 +2,12 @@ from copy import deepcopy
 from random import randint
 from random import choice
 
+import sys
+from pathlib import Path
+current_dir = Path(__file__).parent
+lib_alias = current_dir / "lib"
+sys.path.append(str(lib_alias))
+
 from uo.algorithm.output_control import OutputControl
 
 from opt.single_objective.comb.ones_count_max_problem.ones_count_max_problem import OnesCountMaxProblem

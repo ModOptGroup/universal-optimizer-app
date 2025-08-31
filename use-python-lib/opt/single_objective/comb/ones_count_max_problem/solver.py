@@ -9,6 +9,10 @@ sys.path.append(directory)
 sys.path.append(directory.parent)
 sys.path.append(directory.parent.parent)
 sys.path.append(directory.parent.parent.parent)
+sys.path.append(directory.parent.parent.parent.parent)
+root_dir = directory.parent.parent.parent.parent.parent
+sys.path.append(str(root_dir))
+sys.path.append(str(root_dir/ "lib"))
 
 from random import randrange
 from random import seed
