@@ -4,9 +4,17 @@ from random import choice
 
 import sys
 from pathlib import Path
-current_dir = Path(__file__).parent
-lib_alias = current_dir / "lib"
-sys.path.append(str(lib_alias))
+import os
+directory = Path(__file__).resolve()
+sys.path.append(directory)
+sys.path.append(directory.parent)
+sys.path.append(directory.parent.parent.parent)
+sys.path.append(directory.parent.parent.parent.parent)
+root_dir = directory.parent.parent.parent.parent.parent
+sys.path.append(str(root_dir))
+if 'LIB_SOURCE' in os.environ and os.environ['LIB_SOURCE']=='CODE':
+        directory = Path(__file__).resolve()
+        sys.path.append(str(root_dir/ "lib"))
 
 from uo.algorithm.output_control import OutputControl
 

@@ -1,9 +1,11 @@
 import sys
+import os
 from pathlib import Path
 directory = Path(__file__).resolve()
 root_dir = directory.parent.parent.parent.parent.parent.parent.parent
 sys.path.append(str(root_dir))
-sys.path.append(str(root_dir/ "lib"))
+if 'LIB_SOURCE' in os.environ and os.environ['LIB_SOURCE']=='CODE':
+        sys.path.append(str(root_dir/ "lib"))
 
 from datetime import datetime
 import unittest   

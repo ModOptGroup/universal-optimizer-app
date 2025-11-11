@@ -5,10 +5,8 @@ The :mod:`~opt.single_objective.comb.ones_count_max_problem.ones_count_max_probl
 """
 
 import sys
+import os
 from pathlib import Path
-from typing import Optional
-
-from opt.single_objective.comb.ones_count_max_problem.ones_count_max_problem import OnesCountMaxProblem
 directory = Path(__file__).resolve()
 sys.path.append(directory.parent)
 sys.path.append(directory.parent.parent)
@@ -16,17 +14,23 @@ sys.path.append(directory.parent.parent.parent)
 sys.path.append(directory.parent.parent.parent.parent)
 root_dir = directory.parent.parent.parent.parent.parent
 sys.path.append(str(root_dir))
-sys.path.append(str(root_dir/ "lib"))
+if 'LIB_SOURCE' in os.environ and os.environ['LIB_SOURCE']=='CODE':
+    sys.path.append(str(root_dir/ "lib"))
+
+from typing import Optional
 
 from copy import deepcopy
 from random import choice
 from random import randint
+
 
 from uo.problem.problem import Problem
 from uo.solution.quality_of_solution import QualityOfSolution
 from uo.solution.solution import Solution
 
 from uo.utils.logger import logger
+
+from opt.single_objective.comb.ones_count_max_problem.ones_count_max_problem import OnesCountMaxProblem
 
 class OnesCountMaxProblemBinaryIntSolution(Solution[int,str]):
     

@@ -2,6 +2,7 @@
 The :mod:`~opt.single_objective.glob.function_one_variable_max_problem.command_line` module is used for obtaining execution parameters for execution of the optimizers for max ones problem.
 """
 import sys
+import os
 from pathlib import Path
 directory = Path(__file__).resolve()
 sys.path.append(directory.parent)
@@ -10,7 +11,8 @@ sys.path.append(directory.parent.parent.parent)
 sys.path.append(directory.parent.parent.parent.parent)
 root_dir = directory.parent.parent.parent.parent.parent
 sys.path.append(str(root_dir))
-sys.path.append(str(root_dir/ "lib"))
+if 'LIB_SOURCE' in os.environ and os.environ['LIB_SOURCE']=='CODE':
+        sys.path.append(str(root_dir/ "lib"))
 
 import os
 import logging
