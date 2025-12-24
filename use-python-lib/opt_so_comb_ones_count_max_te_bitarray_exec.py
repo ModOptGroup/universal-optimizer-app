@@ -19,7 +19,7 @@ from opt.single_objective.comb.ones_count_max_problem.ones_count_max_problem_bin
 
 def main():
         output_control:OutputControl = OutputControl(write_to_output=False)
-        problem_to_solve:OnesCountMaxProblem = OnesCountMaxProblem.from_dimension(dimension=10)
+        problem_to_solve:OnesCountMaxProblem = OnesCountMaxProblem.from_dimension(dimension=250)
         solution:OnesCountMaxProblemBinaryBitArraySolution = OnesCountMaxProblemBinaryBitArraySolution()
         te_support:OnesCountMaxProblemBinaryBitArraySolutionTeSupport = OnesCountMaxProblemBinaryBitArraySolutionTeSupport()
         construction_params:TeOptimizerConstructionParameters = TeOptimizerConstructionParameters()
