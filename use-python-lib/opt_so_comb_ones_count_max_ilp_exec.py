@@ -7,10 +7,7 @@ from pathlib import Path
 import os
 directory = Path(__file__).resolve()
 sys.path.append(directory)
-sys.path.append(directory.parent)
-sys.path.append(directory.parent.parent.parent)
-sys.path.append(directory.parent.parent.parent.parent)
-root_dir = directory.parent.parent.parent.parent.parent
+root_dir = directory.parent
 sys.path.append(str(root_dir))
 if 'LIB_SOURCE' in os.environ and os.environ['LIB_SOURCE']=='CODE':
         directory = Path(__file__).resolve()
